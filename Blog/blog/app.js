@@ -27,7 +27,7 @@ app.use(express.session({
     key: settings.db,
     cookie: {maxAge: 1000*60*60*24*30},
     store: new MongoStore({
-        db: settings.db
+        url: 'mongodb://localhost/blog'
     })
 }))
 app.use(app.router);
@@ -37,9 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
-// app.get('/', routes.index);
-// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
