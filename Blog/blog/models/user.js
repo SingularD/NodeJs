@@ -17,7 +17,7 @@ User.prototype.save = function (callback) {
         if (err){
             return callback(err);
         }
-        db.collection('user',function (err,collection) {
+        db.collection('users',function (err,collection) {
             if (err){
                 mongodb.close();
                 return callback(err);
@@ -45,9 +45,9 @@ User.get = function (name,callback) {
                 mongodb.close();
                 return callback(err);
             }
-            collection.findOne({
-                name: name
-            },function (err,user) {
+            collection.findOne(
+                {name: name},
+                function (err,user) {
                 mongodb.close();
                 if (err){
                     return callback(err);
