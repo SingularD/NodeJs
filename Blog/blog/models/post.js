@@ -28,7 +28,7 @@ Post.prototype.save = function (callback) {
         if (err) {
             return callback(err);
         }
-        db.collection('posts',function (err,db) {
+        db.collection('posts',function (err,collection) {
             if (err) {
                 mongodb.close();
                 return callback(err)

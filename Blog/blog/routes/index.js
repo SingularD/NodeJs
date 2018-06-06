@@ -16,7 +16,8 @@ module.exports = function (app) {
                 title: '主页',
                 user: req.session.user,
                 success: req.flash('success').toString(),
-                error: req.flash('error').toString()
+                error: req.flash('error').toString(),
+                posts:posts
             })
         })
     });
@@ -63,7 +64,12 @@ module.exports = function (app) {
     });
     app.get('/login',checkNotLogin);
     app.get('/login',function (req,res) {
-        res.render('login', {title: '登录'})
+        res.render('login', {
+            title: '登录',
+            user: req.session.user,
+            success: req.flash('success').toString(),
+            error: req.flash('error').toString()
+        });
     });
     app.post('/login',checkNotLogin);
     app.post('/login',function (req,res) {
@@ -74,7 +80,7 @@ module.exports = function (app) {
                 req.flash('error','用户不存在!');
                 return res.redirect('/login');
             }
-            if (user.password != password) {
+            if (!(user.password === password)) {
                 req.flash('error','密码错误！');
                 return res.redirect('/login')
             }
