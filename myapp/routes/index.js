@@ -14,7 +14,6 @@ router.post('/input',function (req, res) {
   var psw = req.body.password;
   console.log('username is %s',name);
   console.log('password is %s',psw);
-  res.send('wrong!');
 });
 
 
