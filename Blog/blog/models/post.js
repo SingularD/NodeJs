@@ -1,4 +1,5 @@
 var mongodb = require('./db');
+var markdown = require('markdown').markdown;
 
 function Post(name,title,post) {
     this.name = name;
@@ -16,7 +17,7 @@ Post.prototype.save = function (callback) {
         month: date.getFullYear() + '-' + (date.getMonth() + 1),
         day: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
         minute: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
-        + "" + date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
+        + "-" + date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
     };
     var post = {
         name: this.name,
@@ -67,6 +68,9 @@ Post.get = function (name,callback) {
                 if (err) {
                     return callback(err);
                 }
+                docs.forEach(function (doc) {
+                    doc.post = markdown.toHTML(doc.post);
+                })
                 callback(null,docs)
             });
         });

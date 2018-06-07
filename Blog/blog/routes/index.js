@@ -80,7 +80,7 @@ module.exports = function (app) {
                 req.flash('error','用户不存在!');
                 return res.redirect('/login');
             }
-            if (!(user.password === password)) {
+            if (user.password === password) {
                 req.flash('error','密码错误！');
                 return res.redirect('/login')
             }
@@ -92,7 +92,7 @@ module.exports = function (app) {
 
     app.get('/post',checkLogin);
     app.get('/post',function (req,res) {
-        res.render('/post', {
+        res.render('post', {
             title: '发表',
             user: req.session.user,
             success: req.flash('success').toString(),
@@ -104,6 +104,7 @@ module.exports = function (app) {
     app.post('/post',function (req,res) {
         var currentUser = req.session.user,
             post = new Post(currentUser.name,req.body.title,req.body.post);
+        console.log(currentUser);
         post.save(function (err) {
             if (err) {
                 req.flash('error',err);
