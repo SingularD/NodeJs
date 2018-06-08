@@ -4,6 +4,7 @@
  */
 
 var crypto = require('crypto');
+fs = require('fs');
 User = require('../models/user');
 Post = require('../models/post');
 module.exports = function (app) {
@@ -125,13 +126,35 @@ module.exports = function (app) {
     });
 
     app.get('/upload',checkLogin);
-    app.post('/upload',function (req,res) {
+    app.get('/upload',function (req,res) {
        res.render('upload',{
-           title: '上传',
+           title: '文件上传',
            user: req.session.user,
            success: req.flash('success').toString(),
            error: req.flash('error').toString()
        });
+    });
+
+    app.post('/upload',checkLogin);
+    app.post('/upload',function (req,res) {
+       for (var i in req.files) {
+           if (req.files[i].size === 0) {
+               fs.unlinkSync(req.files[i].path);
+               console.log('Successfully removed an empty file!');
+           } else {
+               var tmp_path = req.files[i].path;
+               console.log(tmp_path);
+               var target_path = 'public/images/' + req.files[i].name;
+               fs.rename(tmp_path,target_path,function (err) {
+                   if (err)throw err;
+               });
+               console.log(target_path);
+               console.log('Successfully rename a file!');
+           }
+       }
+       // console.log(req.files);
+       req.flash('success','文件上传成功！');
+       res.redirect('/upload');
     });
     function checkLogin(req,res,next) {
         if (!req.session.user){
