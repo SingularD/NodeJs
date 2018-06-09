@@ -81,8 +81,6 @@ module.exports = function (app) {
                 req.flash('error','用户不存在!');
                 return res.redirect('/login');
             }
-            console.log(password);
-            console.log(user.password);
             if (!(user.password === password)) {
                 req.flash('error','密码错误！');
                 return res.redirect('/login')
@@ -107,7 +105,6 @@ module.exports = function (app) {
     app.post('/post',function (req,res) {
         var currentUser = req.session.user,
             post = new Post(currentUser.name,req.body.title,req.body.post);
-        console.log(currentUser);
         post.save(function (err) {
             if (err) {
                 req.flash('error',err);
@@ -143,16 +140,13 @@ module.exports = function (app) {
                console.log('Successfully removed an empty file!');
            } else {
                var tmp_path = req.files[i].path;
-               console.log(tmp_path);
                var target_path = 'public/images/' + req.files[i].name;
                fs.rename(tmp_path,target_path,function (err) {
                    if (err)throw err;
                });
-               console.log(target_path);
                console.log('Successfully rename a file!');
            }
        }
-       // console.log(req.files);
        req.flash('success','文件上传成功！');
        res.redirect('/upload');
     });
@@ -194,6 +188,52 @@ module.exports = function (app) {
                 success: req.flash('success').toString(),
                 error: req.flash('error').toString()
             });
+        });
+    });
+
+    app.get('/edit/:name/:day/:title',checkLogin);
+    app.get('/edit/:name/:day/:title',function (req,res) {
+        var currentUser = req.session.user;
+        Post.edit(currentUser.name,req.params.day,req.params.title,function (err,post) {
+            if (err) {
+                req.flash('error',err);
+                return redirect('back');
+            }
+            res.render('edit',{
+                title: '编辑',
+                post: post,
+                user : req.session.user,
+                success : req.flash('success').toString(),
+                error : req.flash('error').toString()
+            });
+        });
+    });
+
+    app.post('/edit/:name/:day/:title',checkLogin);
+    app.post('/edit/:name/:day/:title',function (req,res) {
+        var currentUser = req.session.user;
+        Post.update(currentUser.name,req.params.day,req.params.title,req.body.post,function (err) {
+            var url = '/u/' + req.params.name + '/' + req.params.day + '/' + req.params.title;
+            if (err) {
+                req.flash('error',err);
+                return res.redirect(url);
+            }
+            req.flash('success','修改成功！');
+            res.redirect(url);
+        });
+        console.log('post successfully')
+    });
+
+    app.get('/remove/:name/:day/:title',checkLogin);
+    app.get('/remove/:name/:day/:title',function (req,res) {
+        var currentUser = req.session.user;
+        Post.remove(currentUser.name,req.params.day,req.params.title,function (err) {
+            if (err) {
+                req.flash('error',err);
+                return res.redirect('back');
+            }
+            req.flash('success','删除成功！');
+            res.redirect('/');
         });
     });
     function checkLogin(req,res,next) {
