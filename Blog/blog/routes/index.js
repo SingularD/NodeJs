@@ -7,6 +7,8 @@ var crypto = require('crypto');
 fs = require('fs');
 User = require('../models/user');
 Post = require('../models/post');
+Comment = require('../models/comment');
+
 module.exports = function (app) {
     app.get('/',function (req,res) {
         Post.getAll(null,function (err,posts) {
@@ -235,6 +237,31 @@ module.exports = function (app) {
             req.flash('success','删除成功！');
             res.redirect('/');
         });
+    });
+
+    app.post('/u/:name/:day/:title',function (req,res) {
+        var date = new Date(),
+            time = date.getFullYear()+'-'+(date.getMonth()+1)+''+date.getDate()+''
+            +date.getHours()+':'+(date.getMonth()<10?'0'+date.getMinutes():date.getMinutes());
+       var comment = {
+           name: req.body.name,
+           email: req.body.email,
+           website: req.body.website,
+           time: time,
+           content: req.body.content
+       };
+
+       var newComment = new Comment(req.params.name,req.params.day,req.params.title,comment);
+       console.log(newComment);
+       console.log("index.js")
+       newComment.save(function (err) {
+           if (err) {
+               req.flash('error',err);
+               return res.redirect('back');
+           }
+           req.flash('success','留言成功！');
+           res.redirect('back');
+       });
     });
     function checkLogin(req,res,next) {
         if (!req.session.user){

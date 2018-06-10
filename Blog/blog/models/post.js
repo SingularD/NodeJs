@@ -104,7 +104,7 @@ Post.getOne = function(name, day, title, callback) {
                 //解析 markdown 为 html
                 if (doc) {
                     doc.post = markdown.toHTML(doc.post);
-                    doc.comment.forEach(function (comment) {
+                    doc.comments.forEach(function (comment) {
                         comment.content = markdown.toHTML(comment.content);
                     });
                 }
@@ -112,7 +112,7 @@ Post.getOne = function(name, day, title, callback) {
             });
         });
     });
-}
+};
 
 
 Post.edit = function (name,day,title,callback) {
