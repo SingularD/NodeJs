@@ -241,8 +241,8 @@ module.exports = function (app) {
 
     app.post('/u/:name/:day/:title',function (req,res) {
         var date = new Date(),
-            time = date.getFullYear()+'-'+(date.getMonth()+1)+''+date.getDate()+''
-            +date.getHours()+':'+(date.getMonth()<10?'0'+date.getMinutes():date.getMinutes());
+            time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'
+            +date.getHours()+':'+(date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes());
        var comment = {
            name: req.body.name,
            email: req.body.email,
@@ -253,7 +253,8 @@ module.exports = function (app) {
 
        var newComment = new Comment(req.params.name,req.params.day,req.params.title,comment);
        console.log(newComment);
-       console.log("index.js")
+       console.log("index.js");
+       ///////
        newComment.save(function (err) {
            if (err) {
                req.flash('error',err);

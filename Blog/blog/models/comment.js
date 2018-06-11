@@ -18,17 +18,19 @@ Comment.prototype.save = function (callback) {
         if (err) {
             return callback(err);
         }
-        console.log(comment);
-        console.log("comment.js");
+        ;
         db.collection('posts',function (err,collection) {
             if (err) {
                 mongodb.close();
                 return callback(err);
             }
+            console.log(comment);
+            /////
+            console.log("comment.js");
             collection.update({
-                'name': name,
-                'time.day:': day,
-                'title': title
+                "name": name,
+                "time.day": day,
+                "title": title
             },{
                 $push: {comments: comment}
             },function (err) {
