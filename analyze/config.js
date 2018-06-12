@@ -1,4 +1,4 @@
-var url = 'http://www.qkteam.com/';
+var url = 'http://www.baidu.com/';
 var path = require('path');
 var imgDir = path.join(__dirname,'img');
 
