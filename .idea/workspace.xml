@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94178f49-36fd-4d4e-b5e7-47ab0882c00a" name="Default" comment="" />
+    <list default="true" id="94178f49-36fd-4d4e-b5e7-47ab0882c00a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/analyze.js" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/analyze.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/index.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +21,8 @@
       <file leaf-file-name="analyze.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyze/analyze.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="54">
+              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -27,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/analyze/config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="33" selection-start-column="33" selection-end-column="33" />
+              <caret column="31" selection-start-column="31" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -35,10 +39,25 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyze/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="405">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.gif" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyze/img/2.gif">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="1.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyze/img/1.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="0.gif" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyze/img/0.gif">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -114,8 +133,8 @@
         <option value="$PROJECT_DIR$/Blog/blog/models/post.js" />
         <option value="$PROJECT_DIR$/Blog/blog/models/comment.js" />
         <option value="$PROJECT_DIR$/Blog/blog/routes/index.js" />
-        <option value="$PROJECT_DIR$/analyze/analyze.js" />
         <option value="$PROJECT_DIR$/analyze/index.js" />
+        <option value="$PROJECT_DIR$/analyze/analyze.js" />
         <option value="$PROJECT_DIR$/analyze/config.js" />
       </list>
     </option>
@@ -177,6 +196,12 @@
               <item name="NodeJs" type="b2602c69:ProjectViewProjectNode" />
               <item name="NodeJs" type="462c0819:PsiDirectoryNode" />
               <item name="analyze" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NodeJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NodeJs" type="462c0819:PsiDirectoryNode" />
+              <item name="analyze" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -257,23 +282,27 @@
       <workItem from="1528524750498" duration="6210000" />
       <workItem from="1528636429784" duration="7519000" />
       <workItem from="1528711669924" duration="2491000" />
+      <workItem from="1528817062366" duration="72000" />
+      <workItem from="1528817152904" duration="18000" />
+      <workItem from="1528818645998" duration="1108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62504000" />
+    <option name="totallyTimeSpent" value="63702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="23" width="1378" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14949201" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14876632" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.47945204" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3985056" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2976339" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -288,19 +317,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1497093" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.47945204" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.1369863" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -316,27 +345,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test1/beginning.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="65" lean-forward="true" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test1/hello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test1/hello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test1/beginning.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -564,24 +572,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/analyze.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/analyze/img/2.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/img/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/img/0.gif">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/analyze/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="405">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/analyze.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/analyze/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
