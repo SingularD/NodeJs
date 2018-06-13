@@ -48,7 +48,7 @@ Post.prototype.save = function (callback) {
     });
 };
 
-Post.getAll = function (name,callback) {
+Post.getTen = function (name,page,callback) {
     mongodb.open(function (err,db) {
         if (err) {
             return callback(err);
@@ -62,17 +62,22 @@ Post.getAll = function (name,callback) {
             if (name) {
                 query.name = name;
             }
-            collection.find(query).sort({
-                time: -1
-            }).toArray(function (err,docs) {
-                mongodb.close();
-                if (err) {
-                    return callback(err);
-                }
-                docs.forEach(function (doc) {
-                    doc.post = markdown.toHTML(doc.post);
+            collection.count(query,function(err,total){
+                collection.find(query, {
+                    skip: (page - 1)*10,
+                    limit: 10
+                }).sort({
+                    time: -1
+                }).toArray(function (err,docs) {
+                    mongodb.close();
+                    if (err) {
+                        return callback(err);
+                    }
+                    docs.forEach(function (doc) {
+                        doc.post = markdown.toHTML(doc.post);
+                    });
+                    callback(null,docs,total);
                 });
-                callback(null,docs)
             });
         });
     });
@@ -189,6 +194,31 @@ Post.remove = function (name,day,title,callback) {
                     return callback(err)
                 }
                 callback(null);
+            });
+        });
+    });
+};
+
+Post.getArchive = function (callback) {
+    mongodb.open(function (err,db) {
+        if (err) return callback(err);
+        db.collection('posts',function (err,collection) {
+            if (err) {
+                mongodb.close();
+                return callback(err);
+            }
+            collection.find({},{
+                "name": 1,
+                "time": 1,
+                "title": 1
+            }).sort({
+                time: -1
+            }).toArray(function (err,docs) {
+                mongodb.close();
+                if (err) {
+                    return callback(err);
+                }
+                callback(null,docs);
             });
         });
     });
