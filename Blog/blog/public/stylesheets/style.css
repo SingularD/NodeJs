@@ -3,7 +3,7 @@
     margin: 0;
 }
 body{
-    width: 600px;
+    width: 80%;
     margin: 2em auto;
     padding: 2em auto;
     font-size: 14px;
@@ -14,29 +14,39 @@ p{
     margin: 1em 0;
 }
 header{
+    height: 100px;
     padding: .5em 0;
     border-bottom: 1px solid #cccccc;
 }
-nav{
-    position: fixed;
-    left: 12em;
-    font-family: "Microsoft Yahei";
-    font-size: 1.1em;
-    text-transform: uppercase;
-    width: 9em;
-    text-align: right;
+header h1{
+    float: left;
 }
-nav a{
-    display: block;
-    text-decoration: none;
-    padding: .7em;
-    color: #000000;
+
+.menu{
+    padding-top: 20px;
+    padding-right: 10%;
+    float: right;
 }
-nav a:hover{
-    background-color: #ff0000;
-    color: #f9f9f9;
-    -webkit-transition: color .2s linear;
-}
+/*nav{*/
+    /*position: fixed;*/
+    /*left: 12em;*/
+    /*font-family: "Microsoft Yahei";*/
+    /*font-size: 1.1em;*/
+    /*text-transform: uppercase;*/
+    /*width: 9em;*/
+    /*text-align: right;*/
+/*}*/
+/*nav a{*/
+    /*display: block;*/
+    /*text-decoration: none;*/
+    /*padding: .7em;*/
+    /*color: #000000;*/
+/*}*/
+/*nav a:hover{*/
+    /*background-color: #ff0000;*/
+    /*color: #f9f9f9;*/
+    /*-webkit-transition: color .2s linear;*/
+/*}*/
 
 article{
     font-size: 16px;
