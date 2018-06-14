@@ -80,10 +80,10 @@ module.exports = function (app) {
     });
 
     app.get('/login/github',passport.authenticate("github",{session: false}));
-    app.get('/login/github/callback',authenticate("github",{
+    app.get('/login/github/callback',passport.authenticate("github",{
         session: false,
         failureRedirect: '/login',
-        successFlash: '登录成功？'
+        successFlash: '登录成功!'
     }),function (req,res) {
         req.session.user = {name: req.user.username, head: "https://gravatar.com/avatar/"+req.user._json.gravatar_id+"?=48"};
         res.redirect("/");
