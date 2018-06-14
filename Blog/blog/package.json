@@ -11,6 +11,8 @@
     "ejs": "*",
     "express": "3.21.2",
     "mongodb": "^2.2.33",
-    "markdown": "*"
+    "markdown": "*",
+    "passport": "*",
+    "passport-github": "*"
   }
 }

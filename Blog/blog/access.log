@@ -2,3 +2,5 @@
 ::ffff:127.0.0.1 - - [13/Jun/2018:13:51:06 +0000] "GET / HTTP/1.1" 200 2249 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ::ffff:127.0.0.1 - - [13/Jun/2018:13:51:06 +0000] "GET /stylesheets/style.css HTTP/1.1" 304 - "http://127.0.0.1:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ::ffff:127.0.0.1 - - [13/Jun/2018:13:51:07 +0000] "GET /stylesheets/style.css HTTP/1.1" 304 - "http://127.0.0.1:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+::ffff:127.0.0.1 - - [14/Jun/2018:06:18:45 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+::ffff:127.0.0.1 - - [14/Jun/2018:06:18:45 +0000] "GET /stylesheets/style.css HTTP/1.1" 304 - "http://127.0.0.1:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"

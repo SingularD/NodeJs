@@ -2,7 +2,7 @@
 /*
  * GET home page.
  */
-
+var passport = require('passport');
 var crypto = require('crypto');
 fs = require('fs');
 User = require('../models/user');
@@ -77,6 +77,16 @@ module.exports = function (app) {
             success: req.flash('success').toString(),
             error: req.flash('error').toString()
         });
+    });
+
+    app.get('/login/github',passport.authenticate("github",{session: false}));
+    app.get('/login/github/callback',authenticate("github",{
+        session: false,
+        failureRedirect: '/login',
+        successFlash: '登录成功？'
+    }),function (req,res) {
+        req.session.user = {name: req.user.username, head: "https://gravatar.com/avatar/"+req.user._json.gravatar_id+"?=48"};
+        res.redirect("/");
     });
     app.post('/login',checkNotLogin);
     app.post('/login',function (req,res) {

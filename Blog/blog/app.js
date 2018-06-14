@@ -15,7 +15,8 @@ var accessLog = fs.createWriteStream('access.log',{flags: 'a'});
 var errorLog = fs.createWriteStream('error.log',{flags: 'a'});
 
 var app = express();
-
+var passport = require('passport'),
+    GithubStrategy = require('passport-github').Strategy;
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -35,6 +36,7 @@ app.use(express.session({
         url: 'mongodb://localhost/blog'
     })
 }));
+app.use(passport.initialize());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (err,req,res,next) {
@@ -44,6 +46,13 @@ app.use(function (err,req,res,next) {
 })
 
 // development only
+passport.use(new GithubStrategy({
+    clientID:"477f5269724df3b6faeb",
+    clientSecret:"077f8a7886d629dc9e99345157e530fbff54f336",
+    callbackURL:"http://127.0.0.1:3000/login/github/callback"
+},function (accessToken,refreshToken,profile,done) {
+    done(null,profile);
+}));
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
