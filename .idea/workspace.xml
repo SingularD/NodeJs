@@ -180,10 +180,10 @@
       <path value="$PROJECT_DIR$/myapp/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="62" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="64" />
     <option name="y" value="23" />
-    <option name="width" value="1378" />
+    <option name="width" value="1376" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
